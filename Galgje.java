@@ -15,15 +15,8 @@ public class Galgje {
 	    if(teRadenWoord.contains(i)) {
 	    	System.out.println("ja");
 	    }else {
-	    	System.out.println("nee");
-	    	
-	    }
-	    
-	    
-	    
-	    
+	    	System.out.println("nee");	    	
+	    }	    
 	    System.out.println("Het spel is klaar");
-	    
-		
 	}
 }
