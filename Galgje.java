@@ -1,7 +1,12 @@
 
 public class Galgje {
 	public static void main(String args[]) {
-		System.out.println("Hij doet t");
-		System.out.println("Nog steeds");
+		System.out.println("Welkom Bij Galgje");
+		System.out.println("Het te raden woord: ");
+		
+		String teRadenWoord = "Qien";
+		
+		System.out.println(teRadenWoord);
+		
 	}
 }
