@@ -18,7 +18,16 @@ class Demo{
 		for(int i=0;i < sparta.spelers.size();i++) {
 			sparta.spelers.get(i).voorstellen();
 		}
+		Game game = new Game();
+		game.spelen();
 	}	
+}
+class Game{
+	Team thuisPloeg;
+	Team uitPloeg;
+	void spelen() {
+		System.out.println("De wedstrijd is gestart");
+	}
 }
 class Team{
 	String teamNaam;
