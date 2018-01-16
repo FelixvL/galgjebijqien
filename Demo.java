@@ -1,51 +1,46 @@
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Random;
 
 class Demo{
 	public static void main(String[] args) {
-		Team ajax = new Team();
-		ajax.teamNaam = "Ajax";
-		ajax.spelers.add(new Speler("klaaseen", 24));
-		ajax.spelers.add(new Speler("janssen", 2));
-		ajax.spelers.add(new Speler("kluiver", 4));
-		for(Speler speler:ajax.spelers) {
-//			System.out.println(speler.voorstellen());// ivm void returntype
-			speler.voorstellen();
-		}
-		Team sparta = new Team();
-		sparta.teamNaam = "Sparta";
-		sparta.spelers.add(new Speler("Ronyo", 3));
-		sparta.spelers.add(new Speler("Damen", 5));
-		sparta.spelers.add(new Speler("Onyu", 6));
-		for(int i=0;i < sparta.spelers.size();i++) {
-			sparta.spelers.get(i).voorstellen();
-		}
-		Game game = new Game();
-		game.thuisPloeg = ajax;
-		game.uitPloeg = sparta;
-		game.spelen();
-		
-	}	
-}
-class Game{
-	Team thuisPloeg;
-	Team uitPloeg;
-	void spelen() {
-		System.out.println("De wedstrijd is gestart "+thuisPloeg.teamNaam+ " tegen "+uitPloeg.teamNaam);
+		MonoPoly mp = new MonoPoly();
+		mp.init();
+		mp.starten();
 	}
 }
-class Team{
-	String teamNaam;
-	List<Speler> spelers = new ArrayList();
+
+class MonoPoly{
+	ArrayList<Stad> steden = new ArrayList();
+	void starten() {
+		System.out.println(dobbelsteenGooien());
+		toonBordspel();
+	}
+	int dobbelsteenGooien() {
+		Random random = new Random();
+		return (random.nextInt(6)+1);
+	}
+	void init() {
+		steden.add(new Stad("Amsterdam"));
+		steden.add(new Stad("Utrecht"));
+		steden.add(new Stad("Ons Dorp"));
+		steden.add(new Stad("Leiden"));
+		steden.add(new Stad("Groningen"));
+		steden.add(new Stad("Zwolle"));
+	}
+	void toonBordspel() {
+		for(Stad stad : steden) {
+			System.out.println(stad.naam);
+		}
+	}
 }
+
 class Speler{
-	public Speler(String naam, int rugnummer) {
-		this.naam = naam;
-		this.rugnummer = rugnummer;
-	}
+	
+}
+class Stad{
 	String naam;
-	int rugnummer;
-	void voorstellen(){
-		System.out.println("Ik ben speler "+ naam +" met rugnummer: "+rugnummer);
-	}
+	Stad(String naam){this.naam = naam;}
+}
+class Straat{
+	
 }
